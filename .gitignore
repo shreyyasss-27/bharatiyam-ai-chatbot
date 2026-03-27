@@ -51,10 +51,11 @@ Thumbs.db
 *.log
 logs/
 
-# Data/cache
+# Data/cache - EXCLUDE FROM REPO TO REDUCE DOCKER IMAGE SIZE
+data/
 .cache/
-data/faiss_index/
-data/ocr_pdfs/
+faiss_index/
+ocr_pdfs/
 
 # Node (if any)
 node_modules/
@@ -71,3 +72,8 @@ render.yaml
 app.log
 *.db
 *.sqlite
+
+# Large files (Git LFS warning)
+*.pdf
+*.zip
+*.tar.gz
