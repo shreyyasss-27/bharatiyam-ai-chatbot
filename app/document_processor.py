@@ -5,7 +5,7 @@ from pdf2image import convert_from_path
 import pytesseract
 from indicnlp.tokenize import indic_tokenize
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, JSONLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import logging
 import random
 
