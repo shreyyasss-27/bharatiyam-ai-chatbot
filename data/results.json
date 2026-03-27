@@ -1,0 +1,11 @@
+{
+  "bleu": 62.5,
+  "rouge1": 78.2,
+  "rouge2": 65.1,
+  "rougeL": 75.3,
+  "precision": 80.0,
+  "recall": 70.0,
+  "f1": 74.7,
+  "recall@k": 85.0,
+  "samples": 50
+}
