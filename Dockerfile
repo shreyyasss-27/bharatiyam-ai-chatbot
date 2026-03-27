@@ -14,5 +14,5 @@ COPY *.py ./
 # Expose port
 EXPOSE 8000
 
-# Run the app using python module syntax (more reliable)
-CMD ["python", "-m", "uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "${PORT:-8000}"]
+# Run the app - Render will set PORT env variable
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
