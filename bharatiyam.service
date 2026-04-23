@@ -1,0 +1,15 @@
+[Unit]
+Description=Bharatiyam AI Chatbot API Service
+After=network.target mongod.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/bharatiyam-ai-chatbot
+Environment="PATH=/home/ubuntu/bharatiyam-ai-chatbot/.venv/bin"
+ExecStart=/home/ubuntu/bharatiyam-ai-chatbot/.venv/bin/python -m app.api
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
