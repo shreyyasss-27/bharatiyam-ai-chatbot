@@ -41,6 +41,7 @@ class QueryRequest(BaseModel):
 class QueryResponse(BaseModel):
     response: str
     sources: List[Dict[str, Any]] = []
+    retrieved_chunks: List[Dict[str, Any]] = []
     session_id: str
     history: Optional[List[Dict[str, Any]]] = None
 
@@ -72,6 +73,7 @@ async def query(payload: QueryRequest):
         response_payload = {
             "response": response_text,
             "sources": sources_data,
+            "retrieved_chunks": result.get("retrieved_chunks", []),
             "session_id": session_id or "",
             "history": history_data,
         }

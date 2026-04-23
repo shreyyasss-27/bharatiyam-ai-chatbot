@@ -339,6 +339,14 @@ class DocumentQA:
                 'question': question,
                 'answer': response,
                 'language': language,
+                'retrieved_chunks': [
+                    {
+                        'content': doc['page_content'],
+                        'metadata': doc['metadata'],
+                        'score': doc.get('score', 0.0)
+                    }
+                    for doc in context_docs
+                ],
                 'sources': [
                     {
                         'content': doc['page_content'],
