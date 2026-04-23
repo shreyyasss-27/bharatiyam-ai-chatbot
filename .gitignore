@@ -1,3 +1,6 @@
+# Environment variables (contains API keys)
+.env
+
 # Python
 __pycache__/
 *.py[cod]
@@ -16,64 +19,45 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# Virtual environments
-.env
-.venv
-env/
+# Virtual Environment
+.venv/
 venv/
 ENV/
-env.bak/
-venv.bak/
+env/
 
-# IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Cache
+.cache/
+*.cache
+
+# Data directories (user's confidential data)
+data/
+static/
 
 # Logs
 *.log
-logs/
-
-# Data/cache - EXCLUDE FROM REPO TO REDUCE DOCKER IMAGE SIZE
-data/
-.cache/
-faiss_index/
-ocr_pdfs/
-
-# Node (if any)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Deployment
-fly.toml
-railway.toml
-render.yaml
-
-# Local dev
 app.log
-*.db
-*.sqlite
 
-# Large files (Git LFS warning)
-*.pdf
-*.zip
-*.tar.gz
+# Notebooks (user's work)
+notebooks/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+
+# Frontend (entire directory excluded)
+frontend/
