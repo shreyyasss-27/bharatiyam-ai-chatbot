@@ -196,7 +196,7 @@ GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
 ### Data Directory Setup
-Since the `data/` directory is gitignored (to keep your documents private), you'll need to create it manually:
+Create a data directory under the project root and :
 ```bash
 mkdir data\texts
 mkdir data\pdfs
@@ -228,53 +228,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The Mahabharata text corpus
 - Hugging Face for the transformer models
 - Facebook Research for FAISS
-
-
-
-
-
-## For testcases
-- TC R01 
-from app.translation_llm import TextProcessor
-
-processor = TextProcessor()
-text = "धर्मस्य तु रक्षिता"
-
-normalized = processor.normalize_text(text)
-detected = processor.detect_language(text)
-
-print("Original :", text)
-print("Normalized:", normalized)
-print("Detected :", detected)
-
-
-- TC R02
-from app.embedding_store import VectorStore
-
-store = VectorStore()
-sample = [{"page_content": "Krishna counseled Arjuna on the battlefield."}]
-vecs = store.embed_documents(sample)
-
-print("Vectors generated:", len(vecs))
-print("Embedding dimension:", len(vecs[0]) if vecs else 0)
-
-
-- TC-R03
-from app.translation_llm import TranslationService
-ts = TranslationService()
-text = "Kunti was also known as Pritha."
-hi = ts.translate(text, 'en', 'hi')
-back = ts.translate(hi, 'hi', 'en')
-print("Hindi:", hi)
-print("Back:", back)
-
-
-
-
-
-
-
-
 
 
 Optional but recommended for a clean slate.
